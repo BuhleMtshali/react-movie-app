@@ -12,7 +12,7 @@ function App() {
 
   //useEffect hook
   useEffect(() => {
-    searchMovies('The Mummy')
+    searchMovies('Batman')
   }, []);
 
   const searchMovies = async (title) => {
@@ -32,7 +32,7 @@ function App() {
       {movies?.length > 0 ? (
         <div className="container">
         {movies.map((movie) => (
-          <MovieCard movie={movie} />
+          <MovieCard  movie={movie} key={movie.imdbID}/>
         ))}
       </div>
       ) : (
